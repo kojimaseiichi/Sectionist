@@ -5,19 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sectionist"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <GroupBox>
-            <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <Button x:Name="_btConv" Click="_btConv_Click">変換</Button>
-                <TextBlock Text="開始する章"></TextBlock>
-                <TextBox x:Name="_tbStart" Width="100"></TextBox>
-            </StackPanel>
-        </GroupBox>
-        <TextBox Grid.Row="1" x:Name="_tbContent" AcceptsReturn="True" AcceptsTab="True"></TextBox>
-    </Grid>
+        Title="Sectionist" Height="450" Width="600">
+    <TabControl>
+        <TabItem Header="章番号">
+            <local:SectionistControl></local:SectionistControl>
+        </TabItem>
+
+        <TabItem Header="番号付">
+            <local:NumberingControl></local:NumberingControl>
+        </TabItem>
+    </TabControl>
 </Window>
