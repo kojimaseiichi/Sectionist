@@ -31,9 +31,20 @@ namespace Sectionist
             if (string.IsNullOrEmpty(_tbPattern.Text)) return;
             var r = new Regex(_tbPattern.Text);
             int num = int.Parse(_tbStart.Text);
-            _tbContent.Text = r.Replace(_tbContent.Text, m => {
-                return (num++).ToString();
-            });
+            if (string.IsNullOrEmpty(_tbFormat.Text))
+            {
+                _tbContent.Text = r.Replace(_tbContent.Text, m =>
+                {
+                    return (num++).ToString();
+                });
+            }
+            else
+            {
+                _tbContent.Text = r.Replace(_tbContent.Text, m =>
+                {
+                    return (num++).ToString(_tbFormat.Text);
+                });
+            }
         }
     }
 }

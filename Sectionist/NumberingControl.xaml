@@ -18,6 +18,8 @@
                 <TextBox x:Name="_tbStart" Width="100" Text="1"></TextBox>
                 <TextBlock Text="置換する正規表現"></TextBlock>
                 <TextBox x:Name="_tbPattern" Text="@" Width="100"></TextBox>
+                <TextBlock Text="書式設定"></TextBlock>
+                <TextBox x:Name="_tbFormat" Width="100"></TextBox>
             </StackPanel>
         </GroupBox>
         <TextBox Grid.Row="1" x:Name="_tbContent" AcceptsReturn="True" AcceptsTab="True"></TextBox>
